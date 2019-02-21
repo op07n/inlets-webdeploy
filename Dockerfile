@@ -14,8 +14,8 @@ RUN apk add --force-refresh ca-certificates
 
 COPY --from=build /usr/bin/inlets /root/
 
-EXPOSE 80
+EXPOSE 8090
 
 WORKDIR /root/
 
-CMD ["/usr/bin/inlets"]
+CMD ["/usr/bin/inlets", "-server=true", "-port=8090"]
